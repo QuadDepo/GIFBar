@@ -1,4 +1,5 @@
 const Electron = require("electron");
+const {nativeImage} = require("electron");
 
 require("electron-debug")();
 require("electron-dl")();
@@ -7,7 +8,7 @@ Electron.app.dock.hide();
 
 const Size = {
 	Arrow:   12,
-	Width:  301,
+	Width: 500,
 	Height: 400,
 };
 
@@ -20,9 +21,10 @@ let browser = null;
 
 function createTray() {
 	if (tray)
-		return;
-
-	tray = new Electron.Tray(`${__dirname}/assets/Tray.png`);
+		return
+	let image = nativeImage.createFromPath(`${__dirname}/assets/icon.png`);
+	image.setTemplateImage(true);  
+	tray = new Electron.Tray(image);
 	tray.on("click", (event, bounds) => {
 		if (!browser)
 			createBrowser();
