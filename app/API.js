@@ -43,6 +43,7 @@ API.Result = class {
 		let data = [];
 		if (Array.isArray(json.data)) {
 			data = json.data.map(item => {
+				console.log(item.url);
 				return {
 					url: item.images.original.url,
 					page: item.url,

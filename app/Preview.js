@@ -31,7 +31,8 @@ class Preview {
 		this._image = Element.create(
 			"img",
 			{
-				src: fixedWidth
+				src: fixedWidth,
+				style:'object-fit: contain'
 			}
 		);
 
@@ -39,7 +40,7 @@ class Preview {
 			"div",
 			{
 				class: "preview",
-				style: `height:${this._height}px`,
+				style: `height:${this._height}px; width: 50%;`,
 			},
 			this._image,
 			Element.create(
