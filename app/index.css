@@ -10,6 +10,10 @@
 	--main-radius: 5px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
 	font: 14px BlinkMacSystemFont;
 }
@@ -91,7 +95,8 @@ footer {
 	top: var(--main-offset);
 	z-index: 10;
 	width: 100vw;
-	padding: 0.25em 0.5em 0.3em;
+	height: 50px;
+	padding: 0.5em 0.8em 0.5em;
 	font-size: inherit;
 	background-color: white;
 	border: none;
@@ -118,9 +123,9 @@ footer {
 	top: 24px;
 	right: 0;
 	left: 0;
-	margin-top: calc(50% - 100px + 2em);
+	margin-top: calc(35% - 100px + 2em);
 	padding-top: calc(100px + 1em);
-	font-family: Consolas;
+	font-family: inherit;
 	text-align: center;
 	content: "No Results";
 	background: url("../assets/no-results.gif") center/contain no-repeat;
